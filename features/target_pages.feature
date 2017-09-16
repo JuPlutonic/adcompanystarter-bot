@@ -4,4 +4,4 @@ Feature: Viewer visits the Target Sandbox Page
   I want to see the Target Sandbox Page
 Scenario: View Target Sandbox Page
   Given I am on the Target Sandbox Page
-  Then I should see "This is the Target Sandbox Page."
+  Then I should see "myTarget"
