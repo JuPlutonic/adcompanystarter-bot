@@ -3,8 +3,7 @@ require 'capybara/cucumber'
 require 'rspec'
 require 'capybara/dsl'
 require 'rspec/expectations'
-require 'capybara-chrome'
-include RSpec::Matchers
+features/step_definclude RSpec::Matchers
 
 Given /^I am on the Target Sandbox Page$/ do
   visit "http://target-sandbox.my.com"

@@ -1,2 +1,2 @@
-require "./myapp"
-run MyApp
+require "./crawler"
+run AdCompanyStarter

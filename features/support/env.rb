@@ -1,6 +1,6 @@
 require_relative "../../crawler"
-require 'capybara/cucumber'
 require 'capybara'
+require 'capybara/cucumber'
 require 'rspec'
 require 'capybara/dsl'
 require 'rspec/expectations'
