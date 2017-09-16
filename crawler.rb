@@ -1,4 +1,3 @@
-# require 'rubygems' # Bundle gems
 # require 'nokogiri' # Web parser. CSS/XPath selectors.
 # require 'capybara-webkit'
 # require 'capybara/dsl'
