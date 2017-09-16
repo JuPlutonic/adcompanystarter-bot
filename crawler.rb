@@ -3,8 +3,8 @@
 # require 'capybara/dsl'
 require_relative 'output.rb' # To use in #collect method: xlsx/csv export
 
-#PAGE_URL = "https://target-sandbox.my.com/ads/campaigns/new" #Development
-#Production is PAGE_URL = "https://target.my.com/ads/campaigns/new"
+PAGE_URL = "http://target-sandbox.my.com" # Development
+# For work in production please set PAGE_URL = "https://target.my.com" #  Добавить константу для пути "/ads/campaigns/new"
 
 # Use ARGV0 for login
 # Use ARGV1 for password
