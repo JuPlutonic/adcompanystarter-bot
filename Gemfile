@@ -1,4 +1,4 @@
-ререфакторингsource :rubygems
+source :rubygems
 
 gem "capybara"
 gem "cucumber"
