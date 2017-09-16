@@ -1,7 +1,7 @@
 require_relative "../../crawler"
-require "Capybara"
-require "Capybara/cucumber"
-require "rspec"
+require 'capybara'
+require 'capybara/cucumber'
+require 'rspec'
 
 World do
   Capybara.app = ad-company-starter
