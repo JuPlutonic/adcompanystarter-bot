@@ -31,6 +31,6 @@ require "rspec"
 World do
   Capybara.app = ad-company-starter
 
-  include Capybara::DSL
+#  include Capybara::DSL
   include RSpec::Matchers
 end
