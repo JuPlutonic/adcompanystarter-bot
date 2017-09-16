@@ -1,7 +1,7 @@
-require 'rubygems' # Bundle gems
-require 'nokogiri' # Web parser. CSS/XPath selectors.
-require 'capybara-webkit'
-require 'capybara/dsl'
+# require 'rubygems' # Bundle gems
+# require 'nokogiri' # Web parser. CSS/XPath selectors.
+# require 'capybara-webkit'
+# require 'capybara/dsl'
 require_relative 'output.rb' # To use in #collect method: xlsx/csv export
 
 #PAGE_URL = "https://target-sandbox.my.com/ads/campaigns/new" #Development
