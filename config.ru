@@ -1,2 +1,1 @@
-require "./crawler"
-run AdCompanyStarter
+run crawler #ad_starter_controller
