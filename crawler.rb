@@ -1,6 +1,7 @@
-# require 'nokogiri' # Web parser. CSS/XPath selectors.
+require 'nokogiri' # Web parser. CSS/XPath selectors.
 # require 'capybara-webkit'
 # require 'capybara/dsl'
+require 'open-uri'
 require_relative 'output.rb' # To use in #collect method: xlsx/csv export
 
 PAGE_URL = "http://target-sandbox.my.com" # Development
@@ -13,8 +14,9 @@ PAGE_URL = "http://target-sandbox.my.com" # Development
 
 class Crawler
 
-  #def sign_in (login, password)
-  #end
+def sign_in (login, password)
+  page = Nokogiri::HTML(open(PAGE_URL))
+end
 
   def company_start
   end
