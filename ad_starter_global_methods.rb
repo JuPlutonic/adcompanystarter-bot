@@ -33,5 +33,5 @@ def log_generation
 
   @test_log.puts("                   Test Log: #{@test_log_time}\n")
   @test_log.puts('.........................................' \
-    '.........................\n\n') # Better than concatenate
+    ".........................\n\n") # Better than concatenate
 end # log_generation
