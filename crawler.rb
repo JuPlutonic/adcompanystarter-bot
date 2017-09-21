@@ -1,33 +1,21 @@
+# This file is the CONTROLLER.
+# It contains only the Gems and Task we want to run.
+#--------------------------------------------------------
+
+# Load Gems
+require 'selenium-webdriver' # Testing framework / web parser.
 require 'nokogiri' # Web parser. CSS/XPath selectors.
-# require 'capybara-webkit'
-# require 'capybara/dsl'
-require 'open-uri'
-require_relative 'output.rb' # To use in #collect method: xlsx/csv export
+require 'win32ole' # Forms xls file.
 
-PAGE_URL = "http://target-sandbox.my.com" # Development
-# For work in production please set PAGE_URL = "https://target.my.com" #  Добавить константу для пути "/ads/campaigns/new"
+# Pull in framework files
+require_relative 'ad_starter_actions'
+require_relative 'ad_starter_global_methods'
+require_relative 'ad_starter_properties'
 
-# Use ARGV0 for login
-# Use ARGV1 for password
-# Use ARGV2 for mobile_site
-# And gets for name
+# Pull in Scripts with tasks (such as Excel export).
+require_relative 'output'
 
-class Crawler
-
-def sign_in (login, password)
-  page = Nokogiri::HTML(open(PAGE_URL))
-end
-
-  def company_start
-  end
-
-  public
-
-  #def collect
-
-    # Saves app_id
-    # Collects placement # array
-    # Collects ad_unit # array
-
-  #end
-end
+# Call Scripts with tasks
+log_generation # If we wanted this to be on/off, it could be moved to
+# ad_starter_global_methods > setup.
+visit_site_task

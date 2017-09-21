@@ -1,6 +1,6 @@
 # This file utilizes Ruby-Selenium framework
 
-# Methods in this file are divided by easily  distinguishing tasks
+# Methods in this file are divided by easily distinguishing tasks
 # So program is easy to test
 # --------------------------------------------------------------------------------------------
 
