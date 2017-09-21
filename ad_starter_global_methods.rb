@@ -5,7 +5,7 @@
 # --------------------------------------------------------------------
 
 def setup
-  @driver = Selenium::WebDriver.for @webDrivertoUse # ad_starter_properties.rb
+  @driver = Selenium::WebDriver.for @web_driver_to_use # ad_starter_properties.rb
 end # setup
 
 def teardown
