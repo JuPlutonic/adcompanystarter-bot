@@ -11,7 +11,7 @@ end # test_title
 
 # Fetch the page URL to use and open it.
 def test_page_url
-  @driver.get @test_Url # ad_starter_properties
+  @driver.get @test_url # ad_starter_properties
 end # get_page_url
 
 # Check the web page title is as expected.
