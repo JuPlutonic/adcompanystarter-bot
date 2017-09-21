@@ -4,8 +4,11 @@
 # If there were a large number, we'd split these into separate files.
 # --------------------------------------------------------------------
 
+# Implement exception handling if end-user don't have *needed*-WebDriver
+# in the $PATH.
 def setup
-  @driver = Selenium::WebDriver.for @web_driver_to_use # ad_starter_properties.rb
+  @driver =
+    Selenium::WebDriver.for @web_driver_to_use # ad_starter_properties.rb
 end # setup
 
 def teardown
