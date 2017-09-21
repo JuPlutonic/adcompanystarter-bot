@@ -24,5 +24,5 @@ def validate_page_title
     validation_message = '[PASS] Title was as expected'
   end
   puts validation_message
-  @testLog.puts("#{@original_action_title} \n #{validation_message}")
+  @test_log.puts("#{@original_action_title} \n #{validation_message}")
 end
