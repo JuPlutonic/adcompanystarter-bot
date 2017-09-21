@@ -17,7 +17,7 @@ end # get_page_url
 # Check the web page title is as expected.
 def validate_page_title
   if @driver.title != @expected_result
-    failedTest # ad_starter_global_methods
+    failed_test # ad_starter_global_methods
     validation_message =
       "[FAIL] Title was #{@driver.title}, but we expected #{@expected_result}"
   else

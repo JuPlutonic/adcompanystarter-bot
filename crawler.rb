@@ -5,7 +5,7 @@
 # Load Gems
 require 'selenium-webdriver' # Testing framework / web parser.
 require 'nokogiri' # Web parser. CSS/XPath selectors.
-require 'win32ole' # Forms xls file.
+require 'rubysl-win32ole' # Forms xls file.
 
 # Pull in framework files
 require_relative 'ad_starter_actions'
