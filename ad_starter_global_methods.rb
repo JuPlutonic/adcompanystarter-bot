@@ -32,9 +32,9 @@ end
 def log_generation
   date_and_time # ad_starter_global_methods
   @test_log_time = @time_right_now # ad_starter_global_methods > date_and_time
-  @test_log = File.open("Test Log - #{@test_log_time}.txt", 'w')
+  @test_log = File.open("Test Log - #@test_log_time.txt", 'w')
 
-  @test_log.puts("                   Test Log: #{@test_log_time}\n")
+  @test_log.puts("                   Test Log: #@test_log_time\n")
   @test_log.puts('.........................................' \
     ".........................\n\n") # Better than concatenate
 end # log_generation

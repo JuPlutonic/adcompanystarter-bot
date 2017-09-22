@@ -19,10 +19,10 @@ def validate_page_title
   if @driver.title != @expected_result
     failed_test # ad_starter_global_methods
     validation_message =
-      "[FAIL] Title was #{@driver.title}, but we expected #{@expected_result}"
+      "[FAIL] Title was #@driver.title, but we expected #@expected_result"
   else
     validation_message = '[PASS] Title was as expected'
   end
   puts validation_message
-  @test_log.puts("#{@original_action_title} \n #{validation_message}")
+  @test_log.puts("#@original_action_title \n #{validation_message}")
 end
