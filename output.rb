@@ -5,7 +5,7 @@
 # ------------------------------------------------------------------------------
 
 def visit_site_task
-  test_task_title # ad_starter_actions.rb
+  test_task_title(__callee__) # ad_starter_actions.rb
   setup # ad_starter_global_methods.rb
   # setup Selenium
   test_page_url # ad_starter_actions.rb
@@ -15,7 +15,7 @@ def visit_site_task
 end
 
 def log_in_task
-  test_task_title # ad_starter_actions.rb
+  test_task_title(__callee__) # ad_starter_actions.rb
   setup # ad_starter_global_methods.rb
   # setup Selenium
   test_page_url # ad_starter_actions.rb

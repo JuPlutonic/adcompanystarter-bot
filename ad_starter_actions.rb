@@ -5,8 +5,8 @@
 # --------------------------------------------------------------------
 
 # Pull in the action title that the Script refers to.
-def test_task_title
-  puts @original_action_title # ad_starter_properties
+def test_task_title(callee)
+  puts "Test/Task #{callee}" # ad_starter_properties
 end # test_title
 
 # Fetch the page URL to use and open it.
