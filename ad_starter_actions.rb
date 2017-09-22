@@ -32,7 +32,7 @@ end
 # TASK: Try to sign in to the site
 # --------------------------------------------------------------------
 def press_log_in_button
-
+  @driver.find_element(:xpath,"//*[@id='portal-headline']/div/div[3]/div/span/span/span[2]/span").click
 end
 
 def check_sign_in_form
