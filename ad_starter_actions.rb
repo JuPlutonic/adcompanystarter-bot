@@ -32,11 +32,18 @@ end
 # TASK: Try to sign in to the site
 # --------------------------------------------------------------------
 def press_log_in_button
-  @driver.find_element(:xpath,"//*[@id='portal-headline']/div/div[3]/div/span/span/span[2]/span").click
+  @driver.find_element(:xpath, "//*[@id='portal-headline']/div/div[3]/div/span/span/span[2]/span").click
 end
 
 def check_sign_in_form
-
+  if @driver.find_element(:xpath, "/html/body/div[6]/div/div[2]/div/div[2]/span").text != 'Sign in'
+    failed_test # ad_srarter_global_methods
+    validation_message = '[FAIL] No sign in text in demanded selector'
+  else
+    validation_message = '[PASS] The log in form is presented'
+  end
+  puts validation_message
+  @test_log.puts("#@original_action_title \n #{validation_message}")
 end
 
 def submit_sign_in_form
