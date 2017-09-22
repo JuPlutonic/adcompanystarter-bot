@@ -4,6 +4,8 @@
 # Once there are a large number, we'd split them out into logical sets.
 # --------------------------------------------------------------------
 
+# TASK: Visit the site
+# --------------------------------------------------------------------
 # Pull in the action title that the Script refers to.
 def test_task_title(callee)
   puts "Test/Task #{callee}" # ad_starter_properties
@@ -25,4 +27,18 @@ def validate_page_title
   end
   puts validation_message
   @test_log.puts("#@original_action_title \n #{validation_message}")
+end
+
+# TASK: Try to sign in to the site
+# --------------------------------------------------------------------
+def press_log_in_button
+
+end
+
+def check_sign_in_form
+
+end
+
+def submit_sign_in_form
+
 end
