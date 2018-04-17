@@ -9,12 +9,12 @@
 # Pull in the action title that the Script refers to.
 def test_task_title(callee)
   puts "Test/Task #{callee}" # ad_starter_properties
-end # test_title
+end
 
 # Fetch the page URL to use and open it.
 def test_page_url
   @driver.get @test_url # ad_starter_properties
-end # get_page_url
+end
 
 # Check the web page title is as expected.
 def validate_page_title
@@ -46,6 +46,4 @@ def check_sign_in_form
   @test_log.puts("#@original_action_title \n #{validation_message}")
 end
 
-def submit_sign_in_form
-
-end
+def submit_sign_in_form; end
