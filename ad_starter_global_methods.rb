@@ -14,12 +14,15 @@ include Capybara::DSL
 def setup
   RSpec.configure do
     @driver = Capybara.register_driver @js_driver do |app|
-      Capybara::Cuprite::Driver.new app,
-                                    browser: @browser,
-                                    options: %w[headless disable-gpu window_size: [1024, 768]]
+      Capybara::Cuprite::Driver
+        .new app,
+             browser: @browser,
+             options: %w[headless disable-gpu window_size: [1024, 768]]
     end
     Capybara.current_driver    = @js_driver
     Capybara.javascript_driver = @js_driver
+    # With this line you could remove all sleeps connected to clicks:
+    # @driver.manage.timeouts.implicit_wait = 2
   end
 end
 
@@ -59,4 +62,9 @@ end
 def log_say(message)
   puts(message)
   @test_log.puts("\n#{message}")
+end
+
+# Pull in the action title that the Script refers to.
+def test_task_title(callee)
+  log_say("................\nTest/Task #{callee}")
 end

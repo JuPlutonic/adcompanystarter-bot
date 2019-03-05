@@ -10,11 +10,6 @@
 
 # TASK: Visit the site
 # --------------------------------------------------------------------
-# Pull in the action title that the Script refers to.
-def test_task_title(callee)
-  log_say("................\nTest/Task #{callee}") # ad_starter_properties
-end
-
 # Fetch the page URL to use and open it.
 # When it's no connection you will see message "Chrome process did
 # not produce websocket url within 1 seconds (RuntimeError)"
@@ -40,7 +35,7 @@ end
 def press_log_in_button
   sleep 5 # =====from 4 to 16 seconds to load page=====
   page.driver.click(1000, 26)
-  sleep 1 # ==from 1 to 6 seconds to see click result==
+  sleep 3 # ==from 1 to 6 seconds to see click result==
 end
 
 # Check content on Sign in form
@@ -61,23 +56,23 @@ def submit_sign_in_form
   page.driver.within(@css_of_sign_in_popup)
       .fill_in 'password', with: @env_password
   page.driver.click(336, 550)
-  sleep 2 # ==from 2 to 6 seconds to see click result==
+  sleep 6 # ==from 2 to 6 seconds to see click result==
   failed_test # To see if you are authenticated with given password/login
 end
 
-def balans_empty?
+def balans_is_negative?
   balans = page.driver.find(:xpath, @xpath_of_currency)
                .text.split("\n")
   return false if balans[30][0..-2].to_i.positive? # add gsub(' ','').to_i
 
-  log_say('Balans is empty')
+  log_say('Balans is zero or negative')
   true
 end
 
 def next_task
   log_say('[PASS] Balans is positive number … ₽')
   @driver.visit('/campaign/new')
-  sleep 8 # =====from 7 to 16 seconds to load page=====
+  sleep 9 # =====from 7 to 16 seconds to load page=====
 end
 
 # TASK: Try to start the ad-company
@@ -91,8 +86,32 @@ def page_of_ad_company?
   false
 end
 
+# targets.txt_item "traffic": put into field url and click
 def start_company
-  # Loop: put file to tmp/ read link from file and pull it from file
-  #       targets: traffic put link and click
   log_say('Reading file with site list')
+  File.open(@targets_file) do |f|
+    loop do
+      break if not line = f.gets
+
+      File.open('proceed.txt', 'a') do |d|
+        d.write(line)
+        log_say("#{f.lineno}: #{line.chomp}")
+        page.driver.click(370, 300)
+        p = page.driver.within(@xpath_traffic_target).fill_in 'input', with: line.chomp
+        p.click
+      end
+      f.line.pop
+      f.write(line.join(''))
+    end
+    break if balans_is_negative?
+
+  end
 end
+
+# def targets_emptiness_check
+#   begin
+#     File.delete(@targets_file) if File.readlines(@targets_file)
+#   rescue Errno::EACCES
+#     retry
+#   end
+# end
