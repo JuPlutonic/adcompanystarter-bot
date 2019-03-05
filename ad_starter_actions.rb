@@ -38,9 +38,9 @@ end
 # TASK: Try to sign in to the site
 # --------------------------------------------------------------------
 def press_log_in_button
-  sleep 5
+  sleep 5 # =====from 4 to 16 seconds to load page=====
   page.driver.click(1000, 26)
-  sleep 1
+  sleep 1 # ==from 1 to 6 seconds to see click result==
 end
 
 # Check content on Sign in form
@@ -61,29 +61,38 @@ def submit_sign_in_form
   page.driver.within(@css_of_sign_in_popup)
       .fill_in 'password', with: @env_password
   page.driver.click(336, 550)
-  sleep 5
+  sleep 2 # ==from 2 to 6 seconds to see click result==
   failed_test # To see if you are authenticated with given password/login
 end
 
 def balans_empty?
   balans = page.driver.find(:xpath, @xpath_of_currency)
                .text.split("\n")
-  if balans[30][0..-2].to_i.positive?
-    log_say('[PASS] Balans is not empty … ₽')
-    return false
-  else
-    log_say('Balans is empty')
-    return true
-  end
+  return false if balans[30][0..-2].to_i.positive? # add gsub(' ','').to_i
+
+  log_say('Balans is empty')
+  true
 end
 
 def next_task
-  page.driver.visit('/campaign/new')
-  sleep 1
+  log_say('[PASS] Balans is positive number … ₽')
+  @driver.visit('/campaign/new')
+  sleep 8 # =====from 7 to 16 seconds to load page=====
 end
 
 # TASK: Try to start the ad-company
 # --------------------------------------------------------------------
-def page_of_ad_company?; end
+def page_of_ad_company?
+  # return false if page.driver.within('head > title')
+  #                     .has_content?('')
+  return true if page.driver.title == 'Создать кампанию'
 
-def start_company; end
+  puts '[FAIL]'
+  false
+end
+
+def start_company
+  # Loop: put file to tmp/ read link from file and pull it from file
+  #       targets: traffic put link and click
+  log_say('Reading file with site list')
+end

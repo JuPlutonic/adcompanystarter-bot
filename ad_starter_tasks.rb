@@ -30,6 +30,6 @@ end
 def start_company_task
   test_task_title(__callee__) #              ad_starter_actions.rb
   # teardown Selenium
-  start_company unless page_of_ad_company? # ad_starter_actions.rb
+  start_company if page_of_ad_company? #     ad_starter_actions.rb
   teardown #                                 ad_starter_global_methods.rb
 end

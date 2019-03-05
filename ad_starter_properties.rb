@@ -14,7 +14,7 @@
 # --------target-sandbox.my.com & target.my.com------------
 @expected_result = 'Target.my.com' # <-- Change this to BREAK the test
 @css_of_sign_in_popup = 'body > div.bubble-ts.bubble-ts_my-com > div > div.bubble-ts__content.js-bubble-content > div > div:nth-child(2)'
-@xpath_of_currency = '/html/body/div[1]/div[2]/div[1]/div/div[1]/div[1]/div[2]/div/div[2]/span[2]'
+@xpath_of_currency = '/html/body/div[1]/div[2]/div[1]/div/div[1]/div[1]/div[2]/div/div[2]'
 # Example.
 # How to run script with login and password:
 #   TARG_ENV=qa TARG_LOGIN=john@mail.io TARG_PWD=12345678 ruby crawler.rb
