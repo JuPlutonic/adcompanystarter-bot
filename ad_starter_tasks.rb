@@ -34,3 +34,5 @@ def start_company_task
   start_company if page_of_ad_company? #     ad_starter_actions.rb
   teardown #                                 ad_starter_global_methods.rb
 end
+
+# TODO: add (place:) to each method definition and assign it to `setup`

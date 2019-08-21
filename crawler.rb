@@ -19,3 +19,14 @@ log_generation
 visit_site_task
 log_in_task
 start_company_task
+
+# OPTIMIZE: uncomment next block and delete previous block
+
+# %i[target fb google wapstart].each do |place|
+#   puts "Doing ad company placement on #{place}"
+#   visit_site_task(place)
+#   log_in_task(place)
+#   start_company_task(place)
+# end
+
+# OPTIMIZE: remove proceed.txt, targets.txt and create production.yml + qa.yml

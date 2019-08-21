@@ -8,9 +8,11 @@ require 'capybara/rspec'
 require 'capybara/cuprite'
 include Capybara::DSL
 
-# Implement exception handling if end-user don't have *needed*-WebDriver
-# in the $PATH.
-# options move to ad_starter_properties.rb
+# TODO: Implement exception handling if
+#       end-user don't have *needed*-WebDriver in the $PATH.
+#       Options move to ad_starter_properties.rb
+# TODO: setup(place): run yaml_read method from ad_starter_properties.rb
+#                     pass place to that method.
 def setup
   RSpec.configure do
     @driver = Capybara.register_driver @js_driver do |app|
@@ -27,7 +29,7 @@ def setup
 end
 
 def teardown
-  # @driver.quit # TODO now it'is unapplicable next
+  # @driver.quit # TODO now it's inapplicable next
   # line here is to see that's happen
   date_and_time #                    ad_starter_global_methods
   @test_log.puts("\n................\n\nTask/Test Ended on #@time_right_now")

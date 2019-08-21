@@ -9,12 +9,19 @@
 @base_url = @test_url
 @js_driver = :cuprite
 
-# Site specific:
+# TODO: read this data from YAML file qa.yml or production.yml
+#       with method read_yaml(place)
+# TODO: place to qa.yml and to production.yml these site-specific lines:
+#
 # --------target-sandbox.my.com & target.my.com----
 @expected_result = 'Target.my.com' # <-- Change this to BREAK the test
 @css_of_sign_in_popup = 'body > div.bubble-ts.bubble-ts_my-com > div > div.bubble-ts__content.js-bubble-content > div > div:nth-child(2)'
 @xpath_of_currency = '/html/body/div[1]/div[2]/div[1]/div/div[1]/div[1]/div[2]/div/div[2]'
 @xpath_traffic_target = '/html/body/div[1]/div[2]/div[1]/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div[1]/div/div'
+
+# TODO: use dotenv gem and create .env.qa .env.production files
+# TODO: rewrite the code bellow:
+#
 # Example.
 # How to run script with login and password:
 #   TARG_ENV=qa TARG_LOGIN=john@mail.io TARG_PWD=12345678 ruby crawler.rb
