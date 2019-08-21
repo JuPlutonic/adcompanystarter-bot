@@ -3,7 +3,7 @@
 # This file utilizes Ruby-Selenium framework.
 # Methods in this file are divided by easily distinguishing tasks.
 # So program is easy to test.
-# ------------------------------------------------------------------------------
+# -------------------------------------------------
 
 def visit_site_task
   test_task_title(__callee__) #               ad_starter_global_methods.rb

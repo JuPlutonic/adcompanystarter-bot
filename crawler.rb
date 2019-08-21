@@ -2,7 +2,7 @@
 
 # This file is the CONTROLLER.
 # It contains only Task we want to run.
-#--------------------------------------------------------
+#--------------------------------------------------
 
 # Pull in framework files
 require_relative 'ad_starter_actions'

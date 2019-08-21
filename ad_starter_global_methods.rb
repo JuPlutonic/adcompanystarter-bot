@@ -3,7 +3,7 @@
 # Uses Ruby-Selenium framework.
 # These are the Global Methods for system / testing purposes.
 # If there were a large number, we'd split these into separate files.
-# --------------------------------------------------------------------
+# -------------------------------------------------
 require 'capybara/rspec'
 require 'capybara/cuprite'
 include Capybara::DSL
@@ -29,7 +29,7 @@ end
 def teardown
   # @driver.quit # TODO now it'is unapplicable next
   # line here is to see that's happen
-  date_and_time
+  date_and_time #                    ad_starter_global_methods
   @test_log.puts("\n................\n\nTask/Test Ended on #@time_right_now")
   # @test_log.close
 end

@@ -2,8 +2,7 @@
 
 # The data for the elements below are hard coded for this example.
 # Usually they'd be parameters in abstract Excel files or a database.
-# -------------------------------------------------------------------
-
+# -------------------------------------------------
 # start with global configuration (JS_DRIVER was chrome)
 @browser = :headless_chrome
 @log_level = 'debug'
@@ -11,7 +10,7 @@
 @js_driver = :cuprite
 
 # Site specific:
-# --------target-sandbox.my.com & target.my.com------------
+# --------target-sandbox.my.com & target.my.com----
 @expected_result = 'Target.my.com' # <-- Change this to BREAK the test
 @css_of_sign_in_popup = 'body > div.bubble-ts.bubble-ts_my-com > div > div.bubble-ts__content.js-bubble-content > div > div:nth-child(2)'
 @xpath_of_currency = '/html/body/div[1]/div[2]/div[1]/div/div[1]/div[1]/div[2]/div/div[2]'

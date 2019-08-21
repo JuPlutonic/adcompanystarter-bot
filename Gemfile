@@ -5,11 +5,14 @@ source 'https://rubygems.org'
 # dsl to make driving browsers easy
 gem 'capybara', '~> 3'
 
+# cucumber-4.0.0.rc.1 (https://cucumber.io/)
+gem 'cucumber'
+
 # Headless Chrome driver for Capybara (https://github.com/machinio/cuprite)
 gem 'cuprite'
 
 # Nokogiri is an HTML, XML, SAX, and Reader parser
-# gem 'nokogiri'
+gem 'nokogiri', '>=1.10.4'
 
 # Ruby Standard Library - win32ole
 gem 'rubysl-win32ole'
@@ -28,4 +31,3 @@ group :development do
   # and also makes suggestions for style
   gem 'rubocop'
 end
-

@@ -6,10 +6,10 @@
 # site specific files in "actions" folder.
 # Also it'd be nice to write nnn_site_actions&properties_generator
 # with empty 10 methods inside
-# --------------------------------------------------------------------
+# ------------------------------------------------
 
 # TASK: Visit the site
-# --------------------------------------------------------------------
+# ------------------------------------------------
 # Fetch the page URL to use and open it.
 # When it's no connection you will see message "Chrome process did
 # not produce websocket url within 1 seconds (RuntimeError)"
@@ -31,7 +31,7 @@ def validate_page_title
 end
 
 # TASK: Try to sign in to the site
-# --------------------------------------------------------------------
+# ------------------------------------------------
 def press_log_in_button
   sleep 5 # =====from 4 to 16 seconds to load page=====
   page.driver.click(1000, 26)
@@ -76,7 +76,7 @@ def next_task
 end
 
 # TASK: Try to start the ad-company
-# --------------------------------------------------------------------
+# ------------------------------------------------
 def page_of_ad_company?
   # return false if page.driver.within('head > title')
   #                     .has_content?('')
