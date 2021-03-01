@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# TODO: update to 89.0.4389.23
+# TODO: remove nw linux32, because last 2014's existing version is 2.9 nor 72!
+# TODO: add mac64_m1
+# TODO: update script (use Ruby, Nokogiri) and parse LATEST_RELEASE
+#       on https://chromedriver.storage.googleapis.com
 set -e
 
 #make sure we have everything needed to do the setup

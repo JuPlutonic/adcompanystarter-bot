@@ -4,9 +4,8 @@
 # These are the Global Methods for system / testing purposes.
 # If there were a large number, we'd split these into separate files.
 # -------------------------------------------------
-require 'capybara/rspec'
+require 'capybara/rspec' # ~> LoadError: cannot load such file -- capybara/rspec
 require 'capybara/cuprite'
-include Capybara::DSL
 
 # TODO: Implement exception handling if
 #       end-user don't have *needed*-WebDriver in the $PATH.
@@ -15,11 +14,11 @@ include Capybara::DSL
 #                     pass place to that method.
 def setup
   RSpec.configure do
+    self.include Capybara::DSL
     @driver = Capybara.register_driver @js_driver do |app|
-      Capybara::Cuprite::Driver
-        .new app,
-             browser: @browser,
-             options: %w[headless disable-gpu window_size: [1024, 768]]
+      Capybara::Cuprite::Driver.new(
+        app, browser: @browser, options: %w[headless disable-gpu window_size: [1024, 768]]
+      )
     end
     Capybara.current_driver    = @js_driver
     Capybara.javascript_driver = @js_driver
@@ -70,3 +69,10 @@ end
 def test_task_title(callee)
   log_say("................\nTest/Task #{callee}")
 end
+
+# ~> LoadError
+# ~> cannot load such file -- capybara/rspec
+# ~>
+# ~> <internal:/home/alessio/dotfiles/common/.anyenv/envs/rbenv/versions/3.0.0/lib/ruby/site_ruby/3.0.0/rubygems/core_ext/kernel_require.rb>:85:in `require'
+# ~> <internal:/home/alessio/dotfiles/common/.anyenv/envs/rbenv/versions/3.0.0/lib/ruby/site_ruby/3.0.0/rubygems/core_ext/kernel_require.rb>:85:in `require'
+# ~> /tmp/seeing_is_believing_temp_dir20210301-6486-b3g99c/program.rb:7:in `<main>'
