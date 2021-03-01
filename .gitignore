@@ -48,3 +48,5 @@ Gemfile.lock
 .rvmrc
 *.txt
 *.jpeg
+.overcommit.yml
+
