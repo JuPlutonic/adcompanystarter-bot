@@ -1,5 +1,5 @@
 *.log
-path_ext
+chromedriver_ext
 *.gem
 *.rbc
 /.config
