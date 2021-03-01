@@ -93,19 +93,21 @@ def start_company
     loop do
       break if not line = f.gets
 
-      File.open('proceed.txt', 'a') do |d|
-        d.write(line)
-        log_say("#{f.lineno}: #{line.chomp}")
-        page.driver.click(370, 300)
-        p = page.driver.within(@xpath_traffic_target).fill_in 'input', with: line.chomp
-        p.click
-      end
+      File.open('proceed.txt', 'a') { |d| call_write_and_click(line, d, f.lineno) }
       f.line.pop
       f.write(line.join(''))
     end
     break if balans_is_negative?
 
   end
+end
+
+def call_write_and_click(line, proceeded_line, line_number)
+  proceeded_line.write(line)
+  log_say("#{linenomber}: #{line.chomp}")
+  page.driver.click(370, 300)
+  p = page.driver.within(@xpath_traffic_target).fill_in 'input', with: line.chomp
+  p.click
 end
 
 # def targets_emptiness_check
