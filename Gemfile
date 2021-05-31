@@ -22,12 +22,6 @@ gem 'selenium-webdriver', '~> 3'
 
 # gems in development group are not needed for running tests
 # These gems are used when writing tests to help keep code high quality
-group :development do
-  # electing to use rdoc over yard for documentation here, because it
-  # processes the dsl files by default while yard does not
-  gem 'rdoc'
-
-  # rubocop is LINT for ruby.  It analyzes your code for common ruby mistakes,
-  # and also makes suggestions for style
-  gem 'rubocop'
-end
+# electing to use rdoc over yard for documentation here, because it
+# processes the dsl files by default while yard does not
+gem 'rdoc', group: :development
