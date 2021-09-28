@@ -12,7 +12,7 @@ gem 'cucumber'
 gem 'cuprite'
 
 # Nokogiri is an HTML, XML, SAX, and Reader parser
-gem 'nokogiri', '=1.11.6'
+gem 'nokogiri', '~> 1.12', '>=1.12.5'
 
 # Ruby Standard Library - win32ole
 gem 'rubysl-win32ole'
